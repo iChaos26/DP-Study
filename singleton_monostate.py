@@ -21,9 +21,10 @@ print ("Object State 'b1':", b1.__dict__)
 # Object State 'b': {'1': '2', 'x': 4}
 # Object State 'b1': {'1': '2', 'x': 4}
  
-class Borg(object):
+class BorgNew(object):
     _shared_state = {}
     def __new__(cls, *args, **kwargs):
+        obj = super(Borg, cls).__new__(cls, *args, **kwargs)
         obj.__dict__ = cls._shared_state
         return obj
 
