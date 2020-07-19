@@ -16,7 +16,7 @@ class Cat(Animal):
 class ForestFactory(object):
     def make_sound(self, object_type):
         return eval(object_type)().do_say()
-#client
+
 if __name__ == '__main__':
     ff = ForestFactory()
     animal = input("Dog or Cat?")
